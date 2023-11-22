@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
+title: climate-information-system
+description: GUI built on top of Nepali gridded climate data product
 img: assets/img/1.jpg
-importance: 3
-category: fun
+importance: 5
+category: research
 ---
 
 Every project has a beautiful feature showcase page.

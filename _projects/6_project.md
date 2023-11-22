@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: cs50-intro-to-ai
+description: Projects coded as part of CS50's Intro to AI with Python course
 img:
-importance: 4
+importance: 1
 category: fun
 ---
 

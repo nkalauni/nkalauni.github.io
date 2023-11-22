@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: earthquake-early-warning
+description: Deep Gaussian Process for earthquake S-wave feature prediction
 img:
-importance: 3
-category: fun
+importance: 4
+category: research
 ---
 
 Every project has a beautiful feature showcase page.

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
+title: crop-yield-climate-change
+description: Climate change impacts and adaptation in crop yield and water requirement
 img: assets/img/7.jpg
 redirect: https://unsplash.com
 importance: 3
-category: work
+category: research
 ---
 
 Every project has a beautiful feature showcase page.

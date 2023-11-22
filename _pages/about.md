@@ -2,16 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: Research Assistant, Center for Water Resource Studies, <a href = "https://pcampus.edu.np">Pulchowk Campus</a>, <a href = "https://ioe.tu.edu.np/"IOE</a>, <a href = "https://tu.edu.np/">TU</a>, Nepal
+subtitle: Research Assistant, Center for Water Resource Studies, <a href = "https://pcampus.edu.np">Pulchowk Campus</a>, <a href = "https://ioe.tu.edu.np/">IOE</a>, <a href = "https://tu.edu.np/">TU</a>, Nepal
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  <!-- more_info: > -->
-  <!--   <p>New Manoram Tole</p> -->
-  <!--   <p>Suryabinayak-5</p> -->
-  <!--   <p>Bhaktapur, Bagmati Province, Nepal</p> -->
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts

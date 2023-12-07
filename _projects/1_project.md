@@ -1,11 +1,11 @@
 ---
 layout: page
 title: HimSim.jl
-description: (Under development) Hybrid hydrologic model for Himalayan watersheds
+description: (Under development) Hydrologic model for Himalayan watersheds
 img: assets/img/12.jpg
 importance: 1
 category: research
-related_publications: einstein1956investigations, einstein1950meaning
+#related_publications: einstein1956investigations, einstein1950meaning
 ---
 
 Every project has a beautiful feature showcase page.

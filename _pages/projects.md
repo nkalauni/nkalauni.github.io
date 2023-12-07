@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /projects/
-description: A collection of my cool projects, research or otherwise
+description: (Page under construction) A collection of my cool projects, research or otherwise
 nav: true
 nav_order: 2
 display_categories: [research, fun]

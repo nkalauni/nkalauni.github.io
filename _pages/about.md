@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an M.S. student in Hydrology at the University of Arizona, working as a Graduate Research Assistant in the [Computational Hydrology Lab](https://www.hydro.arizona.edu/) under [Professor Andrew Bennett](https://www.hydro.arizona.edu/). My current research focuses on developing a hybrid differentiable land surface model for improved land-atmosphere flux predictions, embedding neural networks into physics-based frameworks using JAX. Broadly, I am interested in land surface modeling, scientific machine learning, numerical methods, and differentiable modeling.
+I am an M.S. student in Hydrology at the University of Arizona, working as a Graduate Research Assistant in the [Computational Hydrology Lab](https://https://bennetthydrolab.github.io/) under [Professor Andrew Bennett](https://scholar.google.com/citations?user=5G-M-UEAAAAJ&hl=en). My current research focuses on developing a hybrid differentiable land surface model for improved land-atmosphere flux predictions, embedding neural networks into physics-based frameworks using JAX. Broadly, I am interested in land surface modeling, scientific machine learning, numerical methods, and differentiable modeling.
 
 Before moving to Arizona, I worked as a Post-Baccalaureate Research Assistant at the Center for Water Resource Studies, IOE, under [Professor Vishnu Prasad Pandey](https://scholar.google.com/citations?user=pp_w84AAAAAJ&hl=en), where I developed a process-based hydrological model for Himalayan catchments and published work on climate change impacts on crop yield and irrigation requirements in Nepal.
 

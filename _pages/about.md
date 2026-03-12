@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Graduate Research Assistant, <a href="https://www.hydro.arizona.edu/">Hydrology and Atmospheric Sciences</a>, <a href="https://www.arizona.edu/">University of Arizona</a>
+subtitle: Graduate Research Assistant, <a href="https://www.has.arizona.edu/">Hydrology and Atmospheric Sciences</a>, <a href="https://www.arizona.edu/">University of Arizona</a>
 
 profile:
   align: right

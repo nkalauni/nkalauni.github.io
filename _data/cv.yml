@@ -3,51 +3,165 @@
   contents:
     - name: Full Name
       value: Nabin Kalauni
-    - name: Date of Birth
-      value: 9th May 2001
+    - name: Location
+      value: Tucson, AZ
+    - name: Email
+      value: nkalauni@arizona.edu
     - name: Languages
       value: English, Nepali
 
 - title: Education
   type: time_table
   contents:
-    - title: B.Eng. Civil Engineering
-      institution: Pulchowk Campus, Institute of Engineering, Tribhuvan University
-      year: 2023
-            
-- title: Experience
+    - title: M.S. in Hydrology
+      institution: Hydrology and Atmospheric Sciences, University of Arizona, Tucson, AZ
+      year: 2024 - 2026
+      description:
+        - "Cumulative GPA: 4.0"
+        - "Thesis: A Hybrid Differentiable Land Surface Model for Improved Land Surface Flux Predictions"
+        - "Advisor: Andrew Bennett"
+        - "Coursework: HWRS 642 Analysis of Hydrologic Systems, APPL 527 Physics-informed machine learning, HWRS 640 Computational Methods for Data Driven Earth Sciences"
+    - title: B.S. in Civil Engineering
+      institution: Pulchowk Campus, Institute of Engineering (IOE), Tribhuvan University, Lalitpur, Nepal
+      year: 2018 - 2023
+      description:
+        - "Average mark: 75.9% (top 5% of 1000+ at university level)"
+        - "Best in department: Senior year (86.0% mark)"
+        - "Senior thesis: Assessing Climate Change Impacts on Crop Yield: A Case of Tulsipur, Dang"
+
+- title: Research Experience
   type: time_table
   contents:
-    - title: Research Assitant
-      institution: Center for Water Resource Studies, Institute of Engineering
-      year: 2023 - Present
+    - title: Graduate Research Assistant
+      institution: Computational Hydrology Lab, University of Arizona
+      year: Aug. 2024 - Present
+      description:
+        - Supervisor&#58; Prof. Andrew Bennett
+        - Developed a physics-AI hybrid model for land surface fluxes
+        - Embedded feedforward neural networks for latent and sensible heat flux process equations
+        - Implemented in an end-to-end differentiable framework in JAX Python
+    - title: Post-Baccalaureate Research Assistant
+      institution: Center for Water Resource Studies (CWRS), IOE
+      year: Apr. 2023 - Aug. 2024
+      description:
+        - Supervisor&#58; Prof. Dr. Vishnu Prasad Pandey
+        - Developed HimSim.jl, a process-based hydrological model for Himalayan catchments (snow and glacier focus)
+        - Set-up model ODEs using ModelingToolkit.jl in Julia
 
-#- title: Open Source Projects
-#  type: time_table
-#  contents:
-#    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-#      year: 2015-now
-#      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+- title: Publications
+  type: time_table
+  contents:
+    - title: "Cereal yield and water requirements in response to irrigation and soil fertility management in a changing climate: a case of Tulsipur, Western Nepal"
+      institution: Journal of Water and Climate Change
+      year: 2025
+      description:
+        - "Authors: Md Zuber*, Nabin Kalauni*, Dr. Nirman Shrestha, Prof. Vishnu P Pandey (*Equal contributors)"
+        - "DOI: 10.2166/wcc.2025.543"
+        - Studied climate change impacts on crop yield and irrigation water requirements of rice and wheat
+        - Statistically downscaled CMIP6 climate projections in R using quantile mapping
+    - title: "Xarray for Deep Learning Cookbook"
+      institution: Project Pythia Cook-off, NCAR
+      year: 2025
+      description:
+        - "Authors: Keenan Ganz, Nabin Kalauni, Project Pythia Community"
+        - Authored an open-source interactive tutorial on integrating Xarray with PyTorch for Earth System Science data pipelines
+    - title: "A Guide to Nepal Physics Olympiad"
+      institution: Open Source Book
+      year: 2023
+      description:
+        - "Authors: Laxman Bista, Nabin Kalauni, Sandesh Parajuli"
+
+- title: Research Projects
+  type: time_table
+  contents:
+    - title: Hybrid Land-Atmosphere Dynamics Model
+      institution: Computational Hydrology Lab, UofA
+      year: Aug. 2024 - Present
+      description:
+        - Physics-AI Hybrid Modeling
+        - Developed a physics-AI hybrid model for land surface fluxes
+        - Embedded feedforward neural networks to learn process equations for latent and sensible heat fluxes
+        - Implemented in an end-to-end differentiable framework in JAX Python
+    - title: Graph Neural Networks for Meteorological Data
+      institution: Computational Hydrology Lab, UofA
+      year: Jun. 2025 - Present
+      description:
+        - Deep Learning for Spatial Data
+        - Developed a novel graph neural network based method for interpolating station-based point meteorological data
+    - title: Himalayan Hydrology Simulation Model (HimSim.jl)
+      institution: CWRS, IOE
+      year: Apr. 2023 - Aug. 2024
+      description:
+        - Modeling and Package Development
+        - Developed a process-based hydrological model with special focus on snow and glacier processes
+        - Set-up model ODEs using ModelingToolkit.jl in the high-performance Julia language
+
+- title: Conferences
+  type: time_table
+  contents:
+    - title: AGU Annual Meeting 2025
+      institution: New Orleans, LA
+      year: 2025
+      description:
+        - "A Hybrid Differentiable Land Surface Model for Improved Land-Atmosphere Flux Predictions (Oral Talk)"
+
+- title: Skills
+  type: nested_list
+  contents:
+    - title: Programming
+      items:
+        - Python (JAX, PyTorch)
+        - Julia (SciML packages)
+        - R
+        - MATLAB/GNU Octave
+    - title: Research Software Engineering
+      items:
+        - Linux
+        - Git/GitHub (CI/CD, Actions, RSE Best Practices)
+    - title: Spatial Data Analysis
+      items:
+        - Xarray, Geopandas
+        - GDAL/OGR, Leaflet
+        - NetCDF, QGIS
+
+- title: Leadership Experience
+  type: time_table
+  contents:
+    - title: El Dia del Agua y la Atmosfera
+      institution: Tucson, Arizona
+      year: 2026
+      description:
+        - Co-Chair
+    - title: International Physics Olympiad (IPhO)
+      institution: Lisbon, Portugal
+      year: 2018
+      description:
+        - Student Team Leader
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 2018
-      items: 
-        - International Physics Olympiad 2018, Lisbon
+    - year: 2025
+      items:
+        - "Travel Grant & Selected Participant, Project Pythia Cook-off, National Center for Atmospheric Research (NCAR), Boulder, CO"
+        - "Travel Grant & Selected Participant, US-RSE INTERSECT Research Software Engineering Bootcamp, Princeton University"
     - year: 2023
-      items: 
-        - Best in department, Senior Year, Pulchowk Campus
+      items:
+        - "Best in Department: Senior Year, Highest grade in senior year / 1000+ students, Dept. of Civil Engg, IOE"
+    - year: 2018
+      items:
+        - "IOE Four-Year Merit-Based Engineering Study Scholarship, Rank 100/15000+, Pulchowk Campus, IOE"
+        - "Nepal Physics Olympiad (NePhO) Winner, Rank 1 / 10000+, Nepal Physical Society"
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Hydrologic modeling
-    - title: Model-data fusion
-    - title: Climate change
-    - title: Food-water-energy nexus
+    - title: Land surface modeling
+    - title: Scientific machine learning
+    - title: Numerical methods
+    - title: Differentiable modeling
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Chess, Basketball, etc.
+    - "<u>Hobbies:</u> Chess, Basketball, Movies, Fiction"

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Research Assistant, Center for Water Resource Studies, <a href = "https://pcampus.edu.np">Pulchowk Campus</a>, <a href = "https://ioe.tu.edu.np/">IOE</a>, <a href = "https://tu.edu.np/">TU</a>, Nepal
+subtitle: Graduate Research Assistant, <a href="https://www.hydro.arizona.edu/">Hydrology and Atmospheric Sciences</a>, <a href="https://www.arizona.edu/">University of Arizona</a>
 
 profile:
   align: right
@@ -15,9 +15,11 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a B.E. Civil Engineering graduate from IOE Pulchowk Campus and I am currently working as a research assistant at Center for Water Resource Studies under the supervision of [Professor Vishnu Prasad Pandey](https://scholar.google.com/citations?user=pp_w84AAAAAJ&hl=en). My current research here involves improving the predictive performance of hydrologic models in snow-fed catchments of Nepal. Broadly speaking, I am interested in the development and application of numerical and scientific machine learning models in hydrology and the greater field of earth system sciences.
+I am an M.S. student in Hydrology at the University of Arizona, working as a Graduate Research Assistant in the [Computational Hydrology Lab](https://www.hydro.arizona.edu/) under [Professor Andrew Bennett](https://www.hydro.arizona.edu/). My current research focuses on developing a hybrid differentiable land surface model for improved land-atmosphere flux predictions, embedding neural networks into physics-based frameworks using JAX. Broadly, I am interested in land surface modeling, scientific machine learning, numerical methods, and differentiable modeling.
 
-Prior to Pulchowk, I won the Nepal Physics Olympiad (NePhO) 2018 and represented Nepal in the International Physics Olympiad [(IPhO) 2018, Lisbon](http://web.archive.org/web/20230528142145/https://ipho2018.pt/content/delegations/nepal). Frustrated by the lack of resources when preparing for national and international physics olympiad, I collaborated with my IPhO colleagues to release an [open-source book](https://github.com/nkalauni/physics-olympiad-book) on physics olympiad preparation for Nepali aspirants. In my free time, I enjoy playing [chess](https://lichess.org/@/svidler_simp) and basketball, binging movies, and reading fiction.
+Before moving to Arizona, I worked as a Post-Baccalaureate Research Assistant at the Center for Water Resource Studies, IOE, under [Professor Vishnu Prasad Pandey](https://scholar.google.com/citations?user=pp_w84AAAAAJ&hl=en), where I developed a process-based hydrological model for Himalayan catchments and published work on climate change impacts on crop yield and irrigation requirements in Nepal.
+
+Prior to that, I won the Nepal Physics Olympiad (NePhO) 2018 and represented Nepal in the International Physics Olympiad [(IPhO) 2018, Lisbon](http://web.archive.org/web/20230528142145/https://ipho2018.pt/content/delegations/nepal). Frustrated by the lack of resources when preparing for olympiads, I collaborated with my IPhO colleagues to release an [open-source book](https://github.com/nkalauni/physics-olympiad-book) on physics olympiad preparation for Nepali aspirants. In my free time, I enjoy playing [chess](https://lichess.org/@/svidler_simp) and basketball, binging movies, and reading fiction.
 
 <!--To this end, we are exploring ways to integrate remotely sensed data into a simple ODE-system-based model by leveraging recent advances in [differentiable modeling](https://www.nature.com/articles/s41467-021-26107-z) or [scientific machine learning](https://hess.copernicus.org/articles/26/5085/2022/). -->
 

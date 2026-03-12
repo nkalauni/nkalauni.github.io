@@ -1,81 +1,86 @@
 ---
 layout: page
-title: HimSim.jl
-description: (Under development) Hydrologic model for Himalayan watersheds
-img: assets/img/12.jpg
+title: Hybrid Differentiable Land Surface Model
+description: A physics-AI hybrid model for improved land-atmosphere flux predictions, implemented end-to-end in JAX.
+img: assets/img/lad_arch.png
 importance: 1
 category: research
-#related_publications: einstein1956investigations, einstein1950meaning
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Land-atmosphere fluxes — the exchange of energy and water between the land surface and the atmosphere — significantly affect downwind precipitation, weather prediction, climate projections, and drought monitoring. Yet despite decades of development, current Land Surface Models (LSMs) are often outperformed by simple linear regression on standard benchmarks (Best et al., 2015). The core issue: current physical parameterizations are wasting information, and numerical truncation errors (numerical daemons) can corrupt the learning signal for any embedded machine learning component.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+This project addresses these limitations by embedding neural networks directly inside a differentiable physics-based land surface model, enabling end-to-end training that respects the underlying physical structure.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## The LaD Model
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+The base model is the **Land Atmosphere Dynamics (LaD)** model (Milly & Shmakin, 2002) — a coupled water and energy balance model that includes:
 
+- A **5-layer soil** with heat diffusion state **T ∈ ℝ⁵**
+- A **stomatal resistance** term (r_s) for non-water-stressed conditions
+- **Soil sensible heat storage** (S_R) to capture the diurnal cycle
+- A **saturated-zone groundwater reservoir** (W_g) for runoff timing
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/lad_model_architecture.png" title="LaD Model Architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    The LaD model couples energy balance (left) and water balance (right), with snow, root zone, and groundwater reservoirs.
 </div>
 
+---
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Hybrid Model Architecture
 
-{% raw %}
-```html
+The key innovation is replacing the physical flux parameterization equations for **latent heat (LE)** and **sensible heat (H)** with a **feedforward neural network (MLP)**, while keeping the rest of the physics intact. The model is implemented in **JAX**, allowing gradients to flow through the ODE solver back into the neural network weights via backpropagation.
+
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/lad_arch.png" title="Hybrid LaD Model Architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-```
-{% endraw %}
+<div class="caption">
+    The hybrid model architecture: an MLP embedded inside the LaD ODE system, trained end-to-end via a differentiable ODE solver in JAX against FLUXNET observations.
+</div>
+
+Training data comes from **FLUXNET** — a global network of flux tower sites providing 30-minute resolution observations of sensible and latent heat fluxes, along with meteorological forcings (shortwave/longwave radiation, precipitation, temperature, wind speed, humidity).
+
+---
+
+## Results
+
+Experiments were run on two contrasting FLUXNET sites:
+- **US-Me2**: Metolius mature ponderosa pine, Oregon
+- **US-Wkg**: Walnut Gulch Kendall Grasslands, Arizona
+
+**Finding 1 — Hybrid model outperforms calibrated physics baseline for latent heat flux:**
+
+| Site | Model | RMSE (W/m²) | NSE | KGE |
+|------|-------|-------------|-----|-----|
+| US-Me2 | Hybrid | 35.72 | 0.655 | 0.738 |
+| US-Me2 | Calibrated LaD | 40.56 | 0.555 | 0.758 |
+| US-Wkg | Hybrid | 22.98 | 0.731 | 0.822 |
+| US-Wkg | Calibrated LaD | 30.58 | 0.523 | 0.633 |
+
+**Finding 2 — Physics states are critical for the MLP:**
+
+When model internal states (soil temperature, soil moisture, snow) are provided as inputs to the MLP, sensible heat flux prediction improves substantially (NSE: 0.841, Bias: -3.45% vs. NSE: 0.856, Bias: +24.81% without states). Without physics states, the MLP develops a large systematic positive bias — it cannot correctly represent the diurnal cycle without knowing the physical state of the system.
+
+---
+
+## Key Takeaways
+
+- Embedding neural networks into a **differentiable physics framework** outperforms calibrated physics models
+- **Physics model states are necessary** — the MLP needs internal model states as inputs to learn correct flux parameterizations, not just meteorological forcings
+- A **differentiable ODE solver** enables end-to-end training and avoids the numerical daemon problem
+- Two design paradigms for hybrid models: (1) learn parameters of physics equations vs. (2) learn flux parameterizations entirely — this work explores the latter
+
+---
+
+**Presented at AGU Annual Meeting 2025, New Orleans, LA** (Oral Talk)
+
+*Supported in part by NOAA award NA23OAR4590382 and startup funding from the University of Arizona.*
